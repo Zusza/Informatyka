@@ -1,0 +1,84 @@
+# KARTA Z ŻABĄ
+# ZAD1
+# a = int(input())
+# b = int(input())
+# c = int(input())
+
+# print("a: ",end="")
+# if c == b - a or c * 2 == b - a or c * 3 == b - a or c * 4 == b - a or c * 5 == b - a: print(True)
+# else: print(False)
+
+# print("b: ",end="")
+# if c >= b - a: print(1)
+# elif c * 2 >= b - a: print(2)
+# elif c * 3 >= b - a: print(3)
+# elif c * 4 >= b - a: print(4)
+# elif c * 5 >= b - a: print(5)
+# else: print(False)
+
+# print("c: ",end="")
+# if c * 5 >= b - a: print(True,(b - a)/5)
+# else: print(False,(b - a)/5)
+  
+# ZAD2
+# for faj in range(1000,10000):
+#     jed = int(faj % 10)
+#     dz = int((faj % 100)/10)
+#     set = int((faj % 1000)/100)
+#     if jed  == dz * 2 and dz  == set * 2 and jed != 0:
+#         print(faj)
+
+# ZAD3
+# x = 7
+# for i in range(x):
+#     for j in range(x):
+#         if i + j == x or i + j + 2 == x or i + j + 1 == x: print("*",end="")
+#         elif i == j or i + 1 == j or j + 1 == i: print("*",end="")
+#         else: print(" ",end="")
+#     print("")
+
+# KARTA Z POGODĄ
+# ZAD1
+# a = int(input())
+# b = int(input())
+# c = int(input())
+# d = int(input())
+
+# print("a: ",int((a+b+c+d)/4))
+
+# print("b: ",end="")
+# if d - 2 <= a <= d + 2: print(True)
+# else: print(False)
+
+# print("c: ",end="")
+# temp = 0
+# if a < b: temp += 1
+# if b < c: temp += 1
+# if c < d: temp += 1
+# print(temp)
+
+# ZAD2
+# spr = 0
+
+# for col in range(10,100):
+#     temp = col
+
+#     for spr in range(0,10):
+
+#       if temp % 2 == 0:
+#             temp /= 2
+#       else:
+#             temp = (temp * 3)+1
+
+#   if temp == 1 and spr == 9:
+#         print(f"1 na 9 miejscu pojawia się w n = {col}")
+
+# ZAD3
+# x = 7
+
+# for i in range(x):
+#     for j in range(x):
+#         if i == int(x/2) or j == int(x/2): print("*",end="")
+#         elif j == i or i + j == x - 1: print("#",end="")
+#         else: print(" ",end="")
+#     print("")
