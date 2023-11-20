@@ -34,4 +34,6 @@ CREATE TABLE Kreacja (
 
 INSERT INTO Stroj VALUES(NULL,"Wieczorowy", "2023-11-20", "2023-12-20", "T19", "Bartosz");
 INSERT INTO Stroj VALUES(NULL,"Skatowy", "2023-11-19", "2023-12-24", "Skatepark", "Wojciech");
+INSERT INTO Stroj VALUES(NULL,"Casualowy", "2023-11-20", "2024-1-20", "Marks", "Ala");
+INSERT INTO Stroj VALUES(NULL,"Biurowy", "2023-11-17", "2023-12-4", "Gohs", "Magda");
 
