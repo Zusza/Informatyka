@@ -1,2 +1,3 @@
-cd C:\Users\Student\Desktop\www\docker1 - ścieżka pliku
-docker-compose up - otwieranie pliku/tworzenie
+1.cd C:\Users\Student\Desktop\www\docker1 - ścieżka pliku
+2.docker-compose up - otwieranie pliku/tworzenie
+3.docker ps - procesy
