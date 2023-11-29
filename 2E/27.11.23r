@@ -13,14 +13,14 @@ REGEXP - operator używany podczas wykonywania dopasowań do wzorców wyrażeń 
 ------
 Zadania w AW
 
-Zad.1 - Policz ile jest wszystkich kart
+Zad.1 - Policz ile jest wszystkich kart.
 Sposób.1:
 SELECT COUNT(creditcard.CreditCardID) AS Ilosc
 FROM creditcard;
 Sposoób.2:
 SELECT COUNT(*) FROM creditcard;
 
-Zad.2 - Policz ile kart wygasa w 2008 roku
+Zad.2 - Policz ile kart wygasa w 2008 roku.
 Sposób.1:
 SELECT ExpYear, COUNT(creditcard.CreditCardID) AS Ilosc
 FROM creditcard
@@ -31,7 +31,7 @@ SELECT ExpYear, COUNT(*) FROM creditcard
 GROUP BY ExpYear
 HAVING ExpYear=2008;
 
-Zad.3 - Policz ile kard wygasa w 2008 roku w październiku
+Zad.3 - Policz ile kard wygasa w 2008 roku w październiku.
 Sposób.1:
 SELECT ExpMonth, ExpYear, COUNT(creditcard.CreditCardID) AS Ilosc
 FROM creditcard
@@ -43,7 +43,7 @@ SELECT ExpYear, ExpMonth, COUNT(*) FROM creditcard
 GROUP BY ExpYear, ExpMonth
 HAVING ExpYear=2008 AND ExpMonth=10;
 
-Zad.4 - Policz ilość kart Vista
+Zad.4 - Policz ilość kart Vista.
 Sposób.1:
 SELECT COUNT(creditcard.CardType) AS Ilosc
 FROM creditcard
@@ -53,21 +53,36 @@ SELECT CardType, COUNT(CardType) FROM creditcard
 WHERE CardType LIKE "Vista"
 GROUP BY CardType;
 
-Zad.5 - Stwórz zostawienie ilości kart (po CardType) wygasających w styczniu
+Zad.5 - Stwórz zostawienie ilości kart (po CardType) wygasających w styczniu.
+Sposób.1:
 SELECT creditcard.CardType, COUNT(creditcard.CardType) AS Ilosc
 FROM creditcard
 WHERE creditcard.ExpMonth = 1
 GROUP BY creditcard.CardType;
+Sposób.2:
+SELECT CardType, COUNT(*) FROM creditcard
+WHERE ExpMonth=1
+GROUP BY CardType
+HAVING CardType LIKE "%o%"
+ORDER BY COUNT(*) DESC;
 
 Zad.6 - Wypisz 3 najliczniejsze miesiące kiedy wygasają karty Vista w 2007 roku.
+Sposób.1:
 SELECT creditcard.ExpMonth, COUNT(creditcard.CreditCardID) AS Ilosc
 FROM creditcard
 WHERE creditcard.ExpYear = 2007
 GROUP BY creditcard.ExpMonth
 (ORDER BY Ilosc desc)
 LIMIT 3;
+Sposób.2:
+SELECT ExpMonth, COUNT(*) FROM creditcard
+WHERE CardType="Vista" AND ExpYear=2007
+GROUP BY ExpMonth
+ORDER BY 2 DESC
+LIMIT 3;
 
 Zad.7 - W którym roku wygasa najmniej kart w miesiącach letnich?
+Sposób.1:
 SELECT ExpYear 
 FROM creditcard 
 WHERE ExpMonth REGEXP "^[6-8]$"
@@ -76,43 +91,13 @@ ORDER BY COUNT(*) ASC
 LIMIT 1;
 
 ZAd.8 - Utwórz zestawienie typów kart wraz z ilośćiami zkaładając, że wygasają w miesiącach nieparzystych.
-
----Zadania by Pan Nowak---
-Zad.1 - Policz ile jest wszystkich kart
-
-SELECT COUNT(*) FROM creditcard;
-
-Zad.2 - Policz ile kart wygasa w 2008 roku
-
-SELECT ExpYear, COUNT(*) FROM creditcard
-GROUP BY ExpYear
-HAVING ExpYear=2008;
-
-Zad.3 - Policz ile kard wygasa w 2008 roku w październiku
-
-SELECT ExpYear, ExpMonth, COUNT(*) FROM creditcard
-GROUP BY ExpYear, ExpMonth
-HAVING ExpYear=2008 AND ExpMonth=10;
-
-Zad.4 - Policz ilość kart Vista
-
-SELECT CardType, COUNT(CardType) FROM creditcard
-WHERE CardType LIKE "Vista"
+Sposób.1:
+SELECT CardType, COUNT(*)
+FROM creditcard 
+WHERE ExpMonth%2=1
 GROUP BY CardType;
 
-
-Zad.5 - Stwórz zostawienie ilości kart (po CardType) wygasających w styczniu posortowne ilościowo malejąco a w cardType mające literkę "A"
-
-SELECT CardType, COUNT(*) FROM creditcard
-WHERE ExpMonth=1
-GROUP BY CardType
-HAVING CardType LIKE "%o%"
-ORDER BY COUNT(*) DESC;
-
-Zad.6 - Wypisz 3 najliczniejsze miesiące kiedy wygasają karty Vista w 2007 roku.
-
-SELECT ExpMonth, COUNT(*) FROM creditcard
-WHERE CardType="Vista" AND ExpYear=2007
-GROUP BY ExpMonth
-ORDER BY 2 DESC
-LIMIT 3;
+SELECT CardType, COUNT(*)
+FROM creditcard 
+WHERE MOD(ExpMonth,2)=1
+GROUP BY CardType;
