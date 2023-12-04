@@ -1,12 +1,13 @@
-1. Wszyscy chłopcy.
-2. Wszystkie Maje.
-3. Wszyscy przynajmniej 5-letni chłopcy o nazwiskach na "K" i imionach nie na "K".
-4. Wszystkich trzylatków o nazwisku kończącym się na "e".
-5. Suma miejsc w przedszkolach.
-6. Średnia ilość miejsc w przedszkolach.
-7. Jakie przedszkola preferuje Tomasz Dobrzeniecki?
-8. Ile razy na liście preferencji znajduje się Przedszkole nr 4 Gwarny Dworek?
+1. Wszyscy chłopcy. (dzieci) płeć
+2. Wszystkie Maje. (dzieci) imie like "Maja"
+3. Wszyscy przynajmniej 5-letni chłopcy o nazwiskach na "K" i imionach nie na "K". (dzieci) >=5, like "K*", not like "K*"
+4. Wszystkich trzylatków o nazwisku kończącym się na "e". (dzieci) >= 3, like "*e"
+5. Suma miejsc w przedszkolach. (przedszkole) suma w sumie miejsc
+6. Średnia ilość miejsc w przedszkolach. średnia w sumie
+7. Jakie przedszkola preferuje Tomasz Dobrzeniecki? (preferencje)
+8. Ile razy na liście preferencji znajduje się Przedszkole nr 4 Gwarny Dworek? count w sumie 
 -------
 9. Zrób zestawienie 3 pierwszych miesięcy z największą ilością urodzonych dzieci.
+Mid zrób w konstruktorze(funkcje). 
 10. Które przedszkola nie były wybrane w 1, 2 i 3 preferencji (3 zestawienia)
 11. Ilu dzieci wykorzystało tylko jeden wybór przedszkola, ilu dwa wybory? Czy są dzieci, które chcą od razu iść do podstawówki?
