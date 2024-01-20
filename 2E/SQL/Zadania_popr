@@ -2,6 +2,13 @@
 (na ekspozycji stałej lub czasowej) obrazów jest największa. Dla każdego z dwóch malarzy 
 podaj liczbę tych obrazów
 
+SELECT malarze.Imie, malarze.Nazwisko, COUNT(obrazy.ID_obrazu) 
+FROM malarze JOIN obrazy ON malarze.ID_malarza = obrazy.ID_malarza 
+WHERE obrazy.Stan LIKE "ekspozycja czasowa" OR obrazy.Stan LIKE "ekspozycja stala" 
+GROUP BY malarze.Imie 
+ORDER BY 3 DESC 
+LIMIT 2;
+
 2. Utwórz zestawienie zawierające informacje o liczbie obrazów znajdujących się
 w poszczególnych oddziałach z podziałem na ich stan. Oddziały uszereguj alfabetycznie. 
 
