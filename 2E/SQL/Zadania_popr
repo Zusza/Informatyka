@@ -12,14 +12,42 @@ LIMIT 2;
 2. Utwórz zestawienie zawierające informacje o liczbie obrazów znajdujących się
 w poszczególnych oddziałach z podziałem na ich stan. Oddziały uszereguj alfabetycznie. 
 
+SELECT oddzialy.ID_oddzialu, oddzialy.Miejscowosc, obrazy.Stan, COUNT(obrazy.ID_obrazu) AS Ilosc 
+FROM obrazy 
+JOIN oddzialy ON obrazy.ID_oddzialu = oddzialy.ID_oddzialu
+GROUP BY oddzialy.ID_oddzialu, oddzialy.Miejscowosc, obrazy.Stan
+ORDER BY oddzialy.Miejscowosc ASC;
+
 3. Podaj, dla którego z malarzy liczba obecnie wypożyczonych obrazów jest największa. 
+
+SELECT malarze.Imie, malarze.Nazwisko, COUNT(obrazy.Stan) AS Liczba 
+FROM malarze JOIN obrazy ON malarze.ID_malarza = obrazy.ID_malarza 
+WHERE obrazy.Stan LIKE "wypozyczony" 
+ORDER BY 3 DESC
+LIMIT 1;
 
 4. Podaj tytuły obrazów oraz imiona i nazwiska malarzy, których dzieła w tytule zawierają ciąg 
 znaków „polowanie” lub „Polowanie”. 
 
+SELECT obrazy.Tytul, malarze.Imie, malarze.Nazwisko 
+FROM obrazy JOIN malarze ON obrazy.ID_malarza = malarze.ID_malarza 
+WHERE obrazy.Tytul LIKE "%polowanie%" OR "%Polowanie%";
+
 5. W których oddziałach nie ma obrazów?
 
-6. Wypisz malarzy, którzy nie namalowali więcej niż 1 obrazu?
+SELECT oddzialy.ID_oddzialu, COUNT(obrazy.ID_obrazu) AS Liczba_obrazow
+FROM oddzialy 
+LEFT JOIN obrazy ON oddzialy.ID_oddzialu = obrazy.ID_oddzialu
+GROUP BY oddzialy.ID_oddzialu
+HAVING COUNT(obrazy.ID_obrazu) = 0;
+
+6. Wypisz malarzy, którzy nie namalowali więcej niż 1 obraz. -> IDK CZY DOBRZE
+
+SELECT malarze.Imie, malarze.Nazwisko
+FROM malarze JOIN obrazy ON malarze.ID_malarza = obrazy.ID_malarza
+GROUP BY malarze.ID_malarza
+HAVING COUNT(obrazy.ID_obrazu) <= 1
+
 -------------------------------------------------------------
 Rozwiąż zadania. Odpowiedzi daj w innym pliku w formie wklejonej / wpisanej kwerendy SQL zaopatrzonej numerem zadania w stylu:
 
