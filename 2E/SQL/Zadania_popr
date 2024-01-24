@@ -41,12 +41,21 @@ LEFT JOIN obrazy ON oddzialy.ID_oddzialu = obrazy.ID_oddzialu
 GROUP BY oddzialy.ID_oddzialu
 HAVING COUNT(obrazy.ID_obrazu) = 0;
 
-6. Wypisz malarzy, którzy nie namalowali więcej niż 1 obraz. -> IDK CZY DOBRZE
+6. Wypisz malarzy, którzy nie namalowali więcej niż 1 obraz.
 
+v1 -> nie dzioła
 SELECT malarze.Imie, malarze.Nazwisko
 FROM malarze JOIN obrazy ON malarze.ID_malarza = obrazy.ID_malarza
 GROUP BY malarze.ID_malarza
 HAVING COUNT(obrazy.ID_obrazu) <= 1
+
+v2 -> pokrętnie ale działa xdddd
+SELECT malarze.Imie, malarze.Nazwisko, COUNT(obrazy.ID_obrazu) AS Liczba
+FROM malarze JOIN obrazy ON malarze.ID_malarza = obrazy.ID_malarza
+GROUP BY malarze.ID_malarza
+HAVING MAX(Liczba) <= 1
+ORDER BY Liczba ASC
+LIMIT 121;
 
 -------------------------------------------------------------
 Rozwiąż zadania. Odpowiedzi daj w innym pliku w formie wklejonej / wpisanej kwerendy SQL zaopatrzonej numerem zadania w stylu:
