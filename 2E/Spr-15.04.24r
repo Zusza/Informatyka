@@ -1,0 +1,64 @@
+# Zad.1
+# def f(x):
+#     return -x**3 + 2*x**2 + x
+
+# def trapez(a,b,n):
+#     sum=0
+#     dx = (b-a)/2
+#     for i in range(n):
+#         sum = f(a+i*dx)*dx
+#     return sum
+# print(trapez(1, 1.5, 17))
+
+# Zad.2
+# def f(x):
+#     return -x**3 + 2*x**2 + x + 1
+
+# def trapez(a,b,n):
+#     sum=0
+#     dx = (b-a)/2
+#     for i in range(n):
+#         sum = f(a+i*dx)*dx
+#     return sum
+# print(trapez(1, 3, 17))
+
+# Zad.3
+# def f(x):
+#     return (-x**3 + 2*x**2 + x + 1) - ((-x)**3 + 2*x**2 + x)
+
+# def trapez(a,b,n):
+#     sum=0
+#     dx = (b-a)/2
+#     for i in range(n):
+#         sum = f(a+i*dx)*dx
+#     return sum
+# print(trapez(1, 3, 17))
+
+# Zad.4
+# 5 kg -> 1 worek
+# 1 kg nawozu -> 5m^2
+
+# def f(x):
+#     return -x**3 + 2*x**2 + x + 1
+
+# def trapez1(a,b,n):
+#     sum1=0
+#     dx = (b-a)/2
+#     for i in range(n):
+#         sum1 = f(a+i*dx)*dx
+#     return sum1
+# print(trapez1(1, 3, 17))
+
+# def f(x):
+#     return -x**3 + 2*x**2 + x
+
+# def trapez2(a,b,n):
+#     sum2=0
+#     dx = (b-a)/2
+#     for i in range(n):
+#         sum2 = f(a+i*dx)*dx
+#     return sum2
+# print(trapez2(1, 1.5, 17))
+
+# nawoz = (trapez1+trapez2)*0.005**2
+# nawoz = nawoz * 5
