@@ -1,0 +1,63 @@
+# Zad.1 - Napisz program, który wczyta liczbę naturalną n&gt;1 z klawiatury i
+# wyświetli czynniki pierwsze liczby n w osobnych liniach.
+# n = int(input("Podaj n: "))
+# czynnik = 2
+# while n>1:
+#     while n % czynnik == 0:
+#         print(czynnik)
+#         n = n // czynnik
+#     czynnik += 1
+
+# Zad.2 - Napisz program, który wczyta liczbę naturalną n>1 z klawiatury i wyświetli
+# sumę czynników pierwszych tej liczby.
+# n = int(input("Podaj n: "))
+# czynnik = 2
+# sum = 0
+# while n > 1:
+#     while n % czynnik == 0:
+#         sum += czynnik
+#         n = n / czynnik
+#     czynnik += 1
+# print(sum)
+
+# Zad.3 - Napisz program, który wczyta liczbę naturalną n>1 z klawiatury i wyświetli komunikat,
+# czy suma czynników pierwszych liczby n jest liczbą pierwszą.
+# def czyPierwsza(n):
+#     if n < 2:
+#         return False
+#     for i in range(2,n):
+#         if n % i == 0:
+#             return False
+#     return True
+#
+# n = int(input("Podaj n: "))
+# czynnik = 2
+# sum = 0
+# while n > 1:
+#     while n % czynnik == 0:
+#         sum += czynnik
+#         n = n / czynnik
+#     czynnik += 1
+#
+# if czyPierwsza(sum) == True:
+#     print("Suma jest liczbą pierwszą")
+# else:
+#     print("Suma nie jest liczbą pierwszą")
+
+# Zad.4 - Napisz program, który wyświetli liczbę różnych czynników pierwszych liczby n podanej
+# przez użytkownika.
+def czyNaLiscie(lista, x):
+    for i in lista:
+        if i == x:
+            return 0
+    return 1
+
+n = int(input("Podaj n: "))
+lista = []
+czynnik = 2
+liczba = 0
+while n > 1:
+    while n % czynnik == 0:
+        lista.append(czynnik)
+        n = n / czynnik
+    czynnik += 1
