@@ -47,17 +47,52 @@
 # Zad.4 - Napisz program, który wyświetli liczbę różnych czynników pierwszych liczby n podanej
 # przez użytkownika.
 def czyNaLiscie(lista, x):
-    for i in lista:
-        if i == x:
-            return 0
-    return 1
+  for i in lista:
+      if i == x:
+          return 0
+  return 1
 
-n = int(input("Podaj n: "))
+n = int(input("Podaj liczbę do rozkładu: "))
 lista = []
 czynnik = 2
-liczba = 0
 while n > 1:
-    while n % czynnik == 0:
-        lista.append(czynnik)
-        n = n / czynnik
-    czynnik += 1
+  while n % czynnik == 0:
+    if czyNaLiscie(lista, czynnik):
+      lista.append(czynnik)
+    n = n // czynnik
+  czynnik += 1
+for i in lista:
+  print(i)
+
+# Zad.5 - Napisz program, który sprawdzi, czy liczba naturalna n>1 podana przez użytkownika jest liczbą Smitha.
+def sumCyfr(n):
+#   sum = 0
+#   while n > 0:
+#     reszta = n % 10
+#     sum += reszta
+#     n = n // 10
+#   return sum 
+
+# def sumCyfrCzynnikow(n):
+#   czynnik = 2
+#   sum = 0 
+#   sumCyfrCzynnikow = 0
+#   while n > 0:
+#     while n % czynnik == 0:
+#       print(czynnik)
+#       sum += sumCyfr(czynnik)
+#       n = n // czynnik
+#     czynnik += 1
+#   return sum
+
+# def czyPierwsza(n):
+#   for i in range(2,n):
+#     if n % i == 0:
+#       return 0
+#   return 1
+
+# n = int(input("Podaj liczbę: "))
+# if czyPierwsza(n) == 0 and sumCyfr(n) == sumCyfrCzynnikow(n):
+#   print("Tak")
+# else:
+#   print("Nie")
