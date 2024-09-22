@@ -65,7 +65,7 @@ for i in lista:
   print(i)
 
 # Zad.5 - Napisz program, który sprawdzi, czy liczba naturalna n>1 podana przez użytkownika jest liczbą Smitha.
-def sumCyfr(n):
+# def sumCyfr(n):
 #   sum = 0
 #   while n > 0:
 #     reszta = n % 10
