@@ -123,3 +123,17 @@
 # 220 = 1 + 2 + 4 + 71 + 142
 # 284 = 1 + 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55 + 110
 # Kolejna para liczb zaprzyjaźnionych: 1184 i 1210
+def Dzielniki(n):
+  sum = 0
+  for i in range(1, n):
+    if n % i == 0:
+      sum += i
+  return sum
+
+a = int(input("Podaj a: "))
+b = int(input("Podaj b: "))
+
+if Dzielniki(a) == b and Dzielniki(b) == a:
+  print("Tak")
+else:
+  print("Nie")
