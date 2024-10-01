@@ -90,6 +90,34 @@ if __name__ == '__main__':
 # Zad.5 - Napisz program w języku Python, który zapyta użytkownika o podanie dwóch liczb całkowitych a, b, gdzie
 # 2 < a < b, a następnie wyświetli wszystkie liczby pierwsze z przedziału [a,b] oraz ich liczbę i sumę,
 # wykorzystując algorytm sita Eratostenesa.
+def sito_eratostenesa(limit):
+    czy_pierwsza = [True] * (limit + 1)
+    czy_pierwsza[0] = False  # 0 nie jest liczbą pierwszą
+    czy_pierwsza[1] = False  # 1 nie jest liczbą pierwszą
+    
+    p = 2
+    while p * p <= limit:
+        if czy_pierwsza[p]:
+            for i in range(p * p, limit + 1, p):
+                czy_pierwsza[i] = False
+        p += 1
+    return czy_pierwsza
+
+if __name__ == '__main__':
+    a = int(input("Podaj wartość a (2 < a): "))
+    b = int(input("Podaj wartość b (a < b): "))
+
+    if a <= 2 or a >= b:
+        print("Podane wartości są nieprawidłowe. Upewnij się, że 2 < a < b.")
+    else:
+        czy_pierwsza = sito_eratostenesa(b)
+
+        liczby_pierwsze = [i for i in range(a, b + 1) if czy_pierwsza[i]]
+
+        print(f"Liczby pierwsze z przedziału [{a}, {b}]: {liczby_pierwsze}")
+        print(f"Ilość liczb pierwszych: {len(liczby_pierwsze)}")
+        print(f"Suma liczb pierwszych: {sum(liczby_pierwsze)}")
+
 
 # Zad.6 - Napisz program w języku Python, który wyznaczy wszystkie liczby pierwsze mniejsze lub równe 1000 metodą sita
 # Eratostenesa. Następnie program wczyta z pliku ciag.txt liczby całkowite z przedziału [1, 1000]. Liczby te są zapisane
