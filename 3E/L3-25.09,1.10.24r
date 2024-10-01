@@ -59,22 +59,32 @@
 # Zad.4 - Napisz program w języku Python, który wyznaczy wszystkie liczby pierwsze mniejsze lub równe 1000
 # metodą sita Eratostenesa, a następnie wyświetli informację ile liczb w pliku liczby.txt jest liczbą pierwszą.
 # Plik liczby.txt zawiera 10000 liczb z zakresu od 1 do 1000.
-plik = open("liczby.txt","r")
-n = list(map(int,plik.read().split()))
-plik.close()
+def sito_eratostenesa(limit):
+    czy_pierwsza = [True] * (limit + 1)
+    czy_pierwsza[0] = False  # 0 nie jest liczbą pierwszą
+    czy_pierwsza[1] = False  # 1 nie jest liczbą pierwszą
+    
+    p = 2
+    while p * p <= limit:
+        if czy_pierwsza[p]:
+            for i in range(p * p, limit + 1, p):
+                czy_pierwsza[i] = False
+        p += 1
+    return czy_pierwsza
 
-czy_pierwsza = [True]*(n+1)
-czy_pierwsza[0] = False
-czy_pierwsza[1] = False
-p = 2
-while p*p <= n:
-    if czy_pierwsza[p] == True:
-        for i in range(p*p,n+1,p):
-            czy_pierwsza[i] = False
-    p += 1
-for i in range(2,n+1):
-    if czy_pierwsza[i]:
-        print(i, end=" ")
+if __name__ == '__main__':
+    limit = 1000
+    
+    czy_pierwsza = sito_eratostenesa(limit)
+
+    with open("liczby.txt", "r") as plik:
+        liczby = list(map(int, plik.read().split()))
+
+    liczba_pierwszych = 0
+    for liczba in liczby:
+        if liczba <= limit and czy_pierwsza[liczba]:
+            liczba_pierwszych += 1
+    print(f"Liczba liczb pierwszych w pliku: {liczba_pierwszych}")
 
 
 # Zad.5 - Napisz program w języku Python, który zapyta użytkownika o podanie dwóch liczb całkowitych a, b, gdzie
