@@ -123,4 +123,38 @@ if __name__ == '__main__':
 # Eratostenesa. Następnie program wczyta z pliku ciag.txt liczby całkowite z przedziału [1, 1000]. Liczby te są zapisane
 # w jednej linii i są rozdzielone spacjami. Następnie wyświetl ile jest liczb pierwszych w pliku ciag.txt jest oraz jaki
 # stanowią procent wszystkich liczb.
+def sito_eratostenesa(limit):
+    czy_pierwsza = [True] * (limit + 1)
+    czy_pierwsza[0] = False  # 0 nie jest liczbą pierwszą
+    czy_pierwsza[1] = False  # 1 nie jest liczbą pierwszą
+
+    p = 2
+    while p * p <= limit:
+        if czy_pierwsza[p]:
+            for i in range(p * p, limit + 1, p):
+                czy_pierwsza[i] = False
+        p += 1
+    return [i for i in range(2, limit + 1) if czy_pierwsza[i]]
+
+if __name__ == '__main__':
+    liczby_pierwsze = sito_eratostenesa(1000)
+
+    with open("ciag.txt", "r") as plik:
+        zawartosc = plik.read()
+
+    liczby_z_pliku = list(map(int, zawartosc.split()))
+
+    liczby_pierwsze_w_pliku = [liczba for liczba in liczby_z_pliku if liczba in liczby_pierwsze]
+
+    liczba_pierwszych = len(liczby_pierwsze_w_pliku)
+    liczba_liczb_w_pliku = len(liczby_z_pliku)
+    
+    if liczba_liczb_w_pliku > 0:
+        procent_pierwszych = (liczba_pierwszych / liczba_liczb_w_pliku) * 100
+    else:
+        procent_pierwszych = 0
+
+    print(f"Liczby pierwsze w pliku: {liczby_pierwsze_w_pliku}")
+    print(f"Ilość liczb pierwszych w pliku: {liczba_pierwszych}")
+    print(f"Procent liczb pierwszych w pliku: {procent_pierwszych:.2f}%")
 
