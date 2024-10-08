@@ -1,0 +1,45 @@
+# Zad.1
+# def czy_niemalejaca(T,n):
+#     for i in range(n-1):
+#         if T[i] > T[i+1]:
+#             return False
+#         return True
+# def wyszukiwaniebinarne(T,a,n):
+#     lewy = 0
+#     prawy = n-1
+#     while lewy<prawy:
+#         srodek = (lewy+prawy)//2
+#         if T[srodek] < a:
+#             lewy = srodek+1
+#         else:
+#             prawy = srodek
+#     return T[lewy] == a
+#
+# T = list(map(int, input().spilt()))
+# a = int(input("Podaj ciąg"))
+# if czy_niemalejaca(T, len(T)):
+#     print(wyszukiwaniebinarne(T,a, len(T)))
+# else:
+#     print("Ciąg musi być niemalejący")
+
+# Zad.2
+# def czy_niemalejaca(T,n):
+#     for i in range(n-1):
+#         if T[i] > T[i+1]:
+#             return False
+#         return True
+# def wyszukiwaniebinarnereku(T,a,lewy, prawy):
+#     if lewy<prawy:
+#         srodek = (lewy+prawy)//2
+#         if T[srodek] < a:
+#             return wyszukiwaniebinarnereku(T, a, srodek+1, prawy)
+#         else:
+#             return wyszukiwaniebinarnereku(T,a, lewy, srodek)
+#     return T[lewy] == a
+# 
+# T = list(map(int, input().split()))
+# a = int(input("Podaj ciąg: "))
+# if czy_niemalejaca(T, len(T)):
+#     print(wyszukiwaniebinarnereku(T, a, 0, len(T)-1))
+# else:
+#     print("Ciąg musi być niemalejący")
