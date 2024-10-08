@@ -36,10 +36,25 @@
 #         else:
 #             return wyszukiwaniebinarnereku(T,a, lewy, srodek)
 #     return T[lewy] == a
-# 
+#
 # T = list(map(int, input().split()))
 # a = int(input("Podaj ciąg: "))
 # if czy_niemalejaca(T, len(T)):
 #     print(wyszukiwaniebinarnereku(T, a, 0, len(T)-1))
 # else:
 #     print("Ciąg musi być niemalejący")
+
+# Zad.3 - Napisz program, który wyświetli na standardowym wyjściu te ciągi liczbowe z pliku ciagi.txt, które
+# zawierają liczbę 10. Wykorzystaj wyszukiwanie binarne. W pliku ciagi.txt każdy wiersz zawiera jeden
+# ciąg liczb całkowitych rozdzielonych spacjami.
+
+# Zad.4 - Napisz program, który wyświetli na standardowym wyjściu te ciągi liczbowe z pliku ciagi2.txt, które
+# zawierają liczbę 10. Wykorzystaj wyszukiwanie binarne. W pliku ciagi2.txt:
+# Pierwszy wiersz – liczba ciągów w pliku
+# Drugi wiersz – ile jest liczb w kolejnym wierszu
+# Trzeci wiersz – pierwszy ciąg, który ma tyle liczb rozdzielonych spacją ile wskazuje liczba w
+# poprzednim wierszu.
+# Czwarty wiersz – ile jest liczb w kolejnym wierszu
+# Piąty wiersz – drugi ciąg, który ma tyle liczb rozdzielonych spacją ile wskazuje liczba w poprzednim
+# wierszu.
+# itd.
