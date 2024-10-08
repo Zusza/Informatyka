@@ -47,6 +47,33 @@
 # Zad.3 - Napisz program, który wyświetli na standardowym wyjściu te ciągi liczbowe z pliku ciagi.txt, które
 # zawierają liczbę 10. Wykorzystaj wyszukiwanie binarne. W pliku ciagi.txt każdy wiersz zawiera jeden
 # ciąg liczb całkowitych rozdzielonych spacjami.
+def czy_niemalejaca(T, n):
+    for i in range(n-1):
+        if T[i] > T[i+1]:
+            return False
+    return True
+
+def wyszukiwaniebinarne(T, a, n):
+    lewy = 0
+    prawy = n - 1
+    while lewy < prawy:
+        srodek = (lewy + prawy) // 2
+        if T[srodek] < a:
+            lewy = srodek + 1
+        else:
+            prawy = srodek
+    return T[lewy] == a
+
+with open('ciagi.txt', 'r') as file:
+    liczba = 10
+    for line in file:
+        T = list(map(int, line.split()))
+        n = len(T)
+        if czy_niemalejaca(T, n):
+            if wyszukiwaniebinarne(T, liczba, n):
+                print(' '.join(map(str, T)))
+        else:
+            print("Ciąg nie jest niemalejący.")
 
 # Zad.4 - Napisz program, który wyświetli na standardowym wyjściu te ciągi liczbowe z pliku ciagi2.txt, które
 # zawierają liczbę 10. Wykorzystaj wyszukiwanie binarne. W pliku ciagi2.txt:
