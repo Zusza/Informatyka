@@ -85,3 +85,22 @@ with open('ciagi.txt', 'r') as file:
 # Piąty wiersz – drugi ciąg, który ma tyle liczb rozdzielonych spacją ile wskazuje liczba w poprzednim
 # wierszu.
 # itd.
+# def wyszukiwaniebinarne(T,a,n):
+#     lewy = 0
+#     prawy = n-1
+#     while lewy<prawy:
+#         srodek = (lewy+prawy)//2
+#         if T[srodek] < a:
+#             lewy = srodek+1
+#         else:
+#             prawy = srodek
+#     return T[lewy] == a
+#
+# plik = open("ciagi2.txt", "r")
+# n = int(plik.readline().rstrip())
+# for i in range(n):
+#     d = int(plik.readline().rstrip())
+#     ciag = list(map(int, plik.readline().split()))
+#     if wyszukiwaniebinarne(ciag, 10, d):
+#         print(ciag)
+# plik.close()
