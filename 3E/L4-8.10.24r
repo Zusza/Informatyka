@@ -113,6 +113,19 @@
 #     i = i + 1
 # # print(w)
 
+# wyszukiwanie binarne:
+# n = 10
+# A=[0,5,99,3,7,111,13,4,24,4,8]
+# lewy = 1
+# prawy = n
+# while lewy < prawy:
+#     srodek = (lewy + prawy) // 2
+#     if A[srodek] % 2 == 1:
+#         lewy = srodek + 1
+#     else:
+#         prawy = srodek
+# w = A[lewy]
+
 # pseudokod:
 # i ← 1
 # dopóki i <= n:
