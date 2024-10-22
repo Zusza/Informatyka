@@ -1,0 +1,48 @@
+# # Otwieranie plików:
+#
+# plik = open("nazwapliku")
+#
+# for linia in plik:
+#     linia = linia.rstrip()
+#
+# # 1.Lista z liniami:
+# linie = plik.readlines()
+# for linia in linie:
+#     ...
+# print(linie[0])
+#
+# # 2.Odczyt całego pliku jako jeden napis:
+# calyplik = plik.read()
+#
+# # 3.Dane jako lista:
+# dane = list(map(int, plik.read().split()))
+
+
+# Zad.1 - Napisz program, który zapyta użytkownika o podanie imienia i nazwiska,
+# a następnie zapisze te dane w pliku dane_osobowe.txt w dwóch wierszach (pierwszy
+# wiersz imię, drugi nazwisko).
+# plik = open('dane_osobowe.txt', 'w')
+# i = input("Podaj imię: ")
+# n = input("Podaj nazwisko: ")
+# plik.write(i + "\n")
+# plik.write(n)
+# plik.close()
+
+# Zad.2 - Napisz program, który odczyta imię i nazwisko zapisane w pliku
+# dane_osobowe.txt i wyświetli powitanie „Witaj imię i nazwisko”, gdzie imię
+# i nazwisko należy zastąpić odczytanymi z pliku tekstowego.
+# plik = open("dane_osobowe.txt", "r")
+# imie =
+# print(f"Witaj {imie}, {nazwisko}")
+
+# Zad.5
+# a) - cos nie tak
+# plik = open("slowa.txt", "r")
+# numer = 0
+# for linia in plik:
+#     numer+=1
+#     plik.write(f"{numer} - {linia}")
+# b)
+# with open("slowa.txt", "r") as Plik:
+#     print(len(Plik.readlines()))
+# c)
