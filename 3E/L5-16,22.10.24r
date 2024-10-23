@@ -45,4 +45,8 @@
 # b)
 # with open("slowa.txt", "r") as Plik:
 #     print(len(Plik.readlines()))
-# c)
+
+# Zad.7
+# a)
+# import random
+# print(random.randint(10,100))
