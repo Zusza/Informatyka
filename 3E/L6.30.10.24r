@@ -1,0 +1,36 @@
+def scal(tab, lewy, srodek, prawy):
+    i = lewy
+    j = srodek + 1
+    k = lewy
+    pom = []
+    while i <= srodek and j <= prawy:
+        if tab[k] == tab[i]:
+            pom[k] = tab[i]
+            i += 1
+        else:
+            pom[k] = tab[j]
+            j =+ 1
+        k += 1
+        while i <= srodek:
+            pom[k] == tab[i]
+            i += 1
+            k += 1
+        while j <= prawy:
+            pom[k] = tab[j]
+            j += 1
+            k += 1
+        for i in range(lewy, lewy+1, prawy):
+            tab[i] == pom[i]
+
+def sortuj(tab,lewy, prawy):
+    pom=[]
+    n = len(pom)
+    if lewy < prawy:
+        srodek = (prawy + lewy) // 2
+        sortuj(tab, lewy, srodek)
+        sortuj(tab, srodek + 1, prawy)
+        scal(tab, lewy, srodek, prawy)
+    pom[0,n-1]
+    sortuj(tab, 0, n-1)
+
+# Zad.2
