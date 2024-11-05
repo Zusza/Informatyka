@@ -36,33 +36,35 @@
 #     sortuj(tab, 0, n-1)
 
 # # V2:
-def scal(t1, t2):
-    wynik = []
-    i = 0
-    j = 0
-    n1 = len(t1)
-    n2 = len(t2)
-    while i < n1 and j < n2:
-        if t1[i] < t2[j]:
-            wynik.append(t1[i])
-            i += 1
-        else:
-            wynik.append(t2[j])
-            j += 1
-    wynik.extend(t1[i:]) # <- scalanie wielu wyników (extend)
-    wynik.extend(t2[j:])
-    return wynik
-
-def sortowanie(t):
-    n = len(t)
-    if n > 1:
-        srodek = (n-1) // 2
-        lewy = sortowanie(t[:srodek+1])
-        prawy = sortowanie(t[srodek+1:])
-        return scal(lewy, prawy)
-    return t
-
-ciag = input("Podaj ciąg: ")
-liczby = list(map(int, ciag.split()))
-print(liczby)
-print(sortowanie(liczby))
+# def scal(t1, t2):
+#     wynik = []
+#     i = 0
+#     j = 0
+#     n1 = len(t1)
+#     n2 = len(t2)
+#     while i < n1 and j < n2:
+#         if t1[i] < t2[j]:
+#             wynik.append(t1[i])
+#             i += 1
+#         else:
+#             wynik.append(t2[j])
+#             j += 1
+#     wynik.extend(t1[i:]) # <- scalanie wielu wyników (extend)
+#     wynik.extend(t2[j:])
+#     # print(f"Wynik scalania: {wynik}")
+#     return wynik
+# 
+# def sortowanie(t):
+#     # print(f"Sortowanie: {t}")
+#     n = len(t)
+#     if n > 1:
+#         srodek = (n-1) // 2
+#         lewy = sortowanie(t[:srodek+1])
+#         prawy = sortowanie(t[srodek+1:])
+#         return scal(lewy, prawy)
+#     return t
+# 
+# ciag = input("Podaj ciąg: ")
+# liczby = list(map(int, ciag.split()))
+# print(liczby)
+# print(sortowanie(liczby))
