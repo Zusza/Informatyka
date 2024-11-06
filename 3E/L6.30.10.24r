@@ -68,3 +68,25 @@
 # liczby = list(map(int, ciag.split()))
 # print(liczby)
 # print(sortowanie(liczby))
+
+# Zad.2
+# plik = open("ciagi.txt", "r")
+# ciag1 = plik.readline()
+# ciag1 = list(map(int, ciag1.split()))
+# print(ciag1)
+# ciag2 = plik.readline()
+# ciag2 = list(map(int, ciag2.split()))
+# print(ciag2)
+# plik.close()
+# wynik = scal(ciag1, ciag2)
+# plik = open("wyniki.txt", "w")
+# plik.write(" ".join(map(str, wynik)))
+# plik.close()
+
+# Zad.3 - niedokończone
+# import random
+# liczby = [random.randint(1,1000000) for i in range(1000000)]
+# liczby = sortowanie(liczby)
+# with open("wynik.txt", "w") as plik:
+#     for e in range():
+#         pass
