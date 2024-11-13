@@ -1,0 +1,30 @@
+# Zad.1
+# A = list(map(int,input("Podaj współczynniki od a0 do an:").split()))
+# x = float(input("Podaj x: "))
+# n = len(A)-1
+# y = A[0]
+# potega = 1
+# for i in range(1, n+1):
+#     potega *= x
+#     y = y + A[i] * potega
+# print(y)
+
+# Zad.2
+# A = list(map(int, input("Podaj współczynniki od a0 do an: ").split()))
+# x = float(input("Podaj x: "))
+# n = len(A)-1
+# y = A[n] #-1
+# for i in range(0, n-1):
+#     y = x * y + A[i]
+# print(y)
+
+# Zad.3
+# def schematHornera(A,x):
+#     n = len(A)-1
+#     if n == 0:
+#         return A[0]
+#     return x * schematHornera(A[1:], x) + A[0]
+# A = list(map(int, input("Podaj współczynniki od a0 do an: ").split()))
+# x = float(input("Podaj x: "))
+# w = schematHornera(A, x)
+# print(w)
