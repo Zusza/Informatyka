@@ -1,0 +1,10 @@
+# Zad.1
+# plik = open("liczby.txt","r")
+# liczby = list(map(int, plik.read().split()))
+# plik.close()
+# print(liczby)
+#
+# n = len(liczby)
+# for dlugosc in range(1, n+1):
+#     for index_pocz in range(n-dlugosc+1):
+#         print(liczby[index_pocz:index_pocz+dlugosc])
