@@ -19,3 +19,12 @@
 #         print()
 
 # Zad.2
+plik = open("liczby.txt","r")
+# liczby = list(map(int, plik.read().split()))
+# plik.close()
+# print(liczby)
+# #
+# n = len(liczby)
+# for index_pocz in range(n):
+#     for dlugosc in range(1,n+1-index_pocz):
+#         print(*liczby[index_pocz:index_pocz+dlugosc])
