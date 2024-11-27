@@ -1,7 +1,7 @@
 # Zad.1
 # def wyswietl_po_spacji(tab):
 #     print(' '.join(map(str, tab)))
-# 
+#
 # plik = open("liczby.txt","r")
 # liczby = list(map(int, plik.read().split()))
 # plik.close()
@@ -10,5 +10,12 @@
 # n = len(liczby)
 # for dlugosc in range(1, n+1):
 #     for index_pocz in range(n-dlugosc+1):
-#         # print(liczby[index_pocz:index_pocz+dlugosc])
-#         wyswietl_po_spacji(liczby[index_pocz:index_pocz+dlugosc])
+#         # print(*liczby[index_pocz:index_pocz+dlugosc])
+#         # wyswietl_po_spacji(*liczby[index_pocz:index_pocz+dlugosc])
+#         # Sposób bez f.wbudowanych:
+#         index_kon = index_pocz + dlugosc - 1
+#         for i in range(index_pocz, index_kon + 1):
+#             print(liczby[i], end=" ")
+#         print()
+
+# Zad.2
