@@ -33,5 +33,33 @@ plik = open("liczby.txt","r")
 #         print(*liczby[index_pocz:index_pocz+dlugosc])
 
 # ZAD.MATURALNE
-# 3.2
-
+# Zad.3_4
+def czyrosnocamalejacy(ciag):
+    czy_maleje = False
+    n = len(ciag)
+    if n <4:
+        return False
+    for i in range(1, n-1):
+        if ciag[i+1] > ciag[i]:
+            if czy_maleje:
+                return False
+        elif ciag[i+1] < ciag[i]: 
+            czy_maleje = True
+        else:
+            if czy_maleje == False:
+                czy_maleje = True
+            else:
+                return True
+    return True
+plik = open("pi_przyklad.txt", "r")
+ciag = list(map(int, plik.read().split()))
+plik.close()
+czy_rosnie = True
+fragment = [ciag[0]]
+n = len(ciag)
+for i in range(1, n):
+    if czy_rosnie and ciag[i] > fragment[-1]:
+        fragment.append(ciag[i])
+    else:
+        czy_rosnie = False
+        fragment.append(ciag[i])
