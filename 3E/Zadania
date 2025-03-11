@@ -124,3 +124,46 @@
 #         for i in range(n - 2):
 #             if liczby[i] + liczby[i + 1] + liczby[i + 2] == 10:
 #                 print(f"Wiersz: {linia.strip()}, indeks: {i}")
+
+
+# # Gr.A
+# # Zad.1 - W pliku wielomian.txt w pierwszym wierszu znajduje się liczba całkowita oznaczająca stopień wielomianu n, w drugim wierszu znajduje się liczba całkowita oznaczająca argument x. 
+# W trzecim wierszu znajdują się współczynniki wielomianu rozdzielone spacjami w kolejności od współczynnika przy najwyższej potędze do wyrazu wolnego. 
+# Napisz program, który wyświetli wartość wielomianu stopnia n, dla argumentu x, o współczynnikach podanych w pliku wielomian.txt. 
+# Wykorzystaj schemat Hornera, aby zminimalizować liczbę wykonywanych działań mnożenia.
+# with open ("wielomian.txt", "r") as plik:
+#     for i in plik:
+#         a = int(plik.readline().strip())
+#         x = int(plik.readline().strip())
+#         wspolczynnik = list(map(int, i.split()))
+
+# wartosc = wspolczynnik[0]
+# for i in wspolczynnik:
+#     w = w + x * i
+
+# print(w)
+# # Zad.2 - Napisz program w języku Python, który wczyta ciągi z pliku ciagi.txt i wyświetli te ciągi, które są rosnące. W pliku ciagi.txt każdy wiersz zawiera jeden ciąg liczb całkowitych rozdzielonych spacjami.
+# with open("ciagi.txt", "r") as plik:
+#     for i in plik:
+#         ciag = list(map(int, i.split()))
+
+# n = len(ciag)
+# rosn = True
+# for i in range(n - 1):
+#     if ciag[i] < ciag[i-1]:
+#         rosn = False
+#         break
+# if rosn == True:
+#     print(ciag)
+
+# # Zad.3 - Napisz program w języku Python, który wyświetli spójne podciągi o długości 4 ciągu, znajdującego się w pierwszym wierszu pliku liczby.txt, które mają sumę elementów większą od 1.
+# plik = open("liczby.txt", "r")
+# liczby = list(map(int, plik.readline().split()))
+# plik.close()
+
+# n = len(liczby)
+
+# for i in range(n-3):
+#     podciag = liczby[i:i+4] #od liczby[i] do liczby [i+4]
+#     if sum(podciag) > 1:
+#         print(podciag)
