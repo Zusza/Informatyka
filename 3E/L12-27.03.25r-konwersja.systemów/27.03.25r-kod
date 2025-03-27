@@ -1,0 +1,17 @@
+# Zad.6
+binarna = input("Podaj liczbę binarną: ")
+czesci = binarna.split(",")
+calkowita = czesci[0]
+dlcal = len(calkowita)
+ulamek = czesci[1]
+dlulam = len(ulamek)
+wynik = 0
+odwrocona = calkowita[::-1]
+for i in range(dlcal):
+    if calkowita[i] == "1":
+        wynik += 2**(i)
+# print(wynik)
+for i in range(dlulam):
+    if ulamek[i] == "1":
+        wynik += 2**(-i-1)
+print(wynik)
