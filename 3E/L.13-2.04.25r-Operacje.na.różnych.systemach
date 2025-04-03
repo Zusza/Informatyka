@@ -1,3 +1,34 @@
+# # Zad.2
+# # v.1
+# liczba1 = int(input("Podaj pierwszą liczbę binarną: "),2)
+# liczba2 = int(input("Podaj drugą liczbę binarną: "),2)
+# sum = liczba1 + liczba2
+# print(bin(sum)[2:])
+
+# # v.2
+# liczba1 = input("Podaj pierwszą liczbę binarną: ")
+# liczba2 = input("Podaj pierwszą liczbę binarną: ")
+# wynik = ""
+# dllicz1 = len(liczba1)
+# dllicz2 = len(liczba2)
+# if dllicz1 > dllicz2:
+#     liczba2= "0" * (dllicz1-dllicz2) + liczba2
+#     dllicz2 = dllicz1
+# else:
+#     liczba1 = "0" * (dllicz2-dllicz1) + liczba1
+#     dllicz1 = dllicz2
+# przeniesienie = 0
+# for i in range(dllicz1-1, -1, -1):
+#     cyfrawyniku = int(liczba1[i])+int(liczba2[i])+przeniesienie
+#     if cyfrawyniku > 1:
+#         cyfrawyniku = cyfrawyniku % 2
+#     else:
+#         przeniesienie = 0
+#     wynik = str(cyfrawyniku) + wynik
+# if przeniesienie == 1:
+#     wynik = "1" + wynik
+# print(wynik)
+
 # # Zad.5
 # 121 = 10201₃
 # 101112₃ + 121₉ = 112020₃ #dodawanie w słupku
