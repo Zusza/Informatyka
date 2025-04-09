@@ -1,0 +1,53 @@
+# # Zad.2
+# class Prostokat:
+#     def __init__(self, dlugosc, szerokosc):
+#         self.a = dlugosc
+#         self.b = szerokosc
+#     def pole(self):
+#         return self.a * self.b
+#     def obwod(self):
+#         return self.a + self.b
+# prostokat1 = Prostokat(2,5)
+# prostokat2 = Prostokat(2,5)
+# print("Pole prostokąta o bokach", prostokat1.a, "i", prostokat1.b, "wynosi:", prostokat1.pole())
+# print("Obwód prostokąta o bokach", prostokat2.a, "i", prostokat2.b, "wynosi:", prostokat2.obwod())
+
+# # Zad.3
+# class Prostokat:
+#     def __init__(self, dlugosc, szerokosc):
+#         self.a = dlugosc
+#         self.b = szerokosc
+#     def pole(self):
+#         return self.a * self.b
+#     def obwod(self):
+#         return self.a+self.b
+# class ProstokatExtra(Prostokat):
+#     def __init__(self, x, y):
+#         super().__init__(x,y)
+#     def wyswietl_pole(self):
+#         print("Pole prostokąta o bokach", self.a, "i", self.b, "wynosi:", self.pole())
+#     def wyswietl_obwod(self):
+#         print("Obwod prostokąta o bokach", self.a, "i", self.b, "wynosi:", self.obwod())
+# prostokat1 = ProstokatExtra(3,4)
+# prostokat1.wyswietl_pole()
+# prostokat1.wyswietl_obwod()
+
+# # Zad.4
+# class Prostokat:
+#     def __init__(self, dlugosc, szerokosc):
+#         self.a = dlugosc
+#         self.b = szerokosc
+#     def pole(self):
+#         return self.a * self.b
+#     def obwod(self):
+#         return self.a+self.b
+# class ProstokatExtra(Prostokat):
+#     def __init__(self, x, y):
+#         super().__init__(x,y)
+#     def wyswietl_pole(self):
+#         print("Pole prostokąta o bokach", self.a, "i", self.b, "wynosi:", self.pole())
+#     def wyswietl_obwod(self):
+#         print("Obwod prostokąta o bokach", self.a, "i", self.b, "wynosi:", self.obwod())
+# prostokat1 = ProstokatExtra(int(input("Podaj pierwszą wartość: ")),int(input("Podaj drugą wartość: ")))
+# prostokat1.wyswietl_pole()
+# prostokat1.wyswietl_obwod()
