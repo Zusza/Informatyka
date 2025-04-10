@@ -1,0 +1,70 @@
+# # Płatek Kocha
+# import turtle
+# def rysuj_krzywa_kocha(t, dlugosc, poziom):
+#     if poziom == 0:
+#         t.forward(dlugosc)
+#     else:
+#         dlugosc /= 3.0
+#         rysuj_krzywa_kocha(t, dlugosc, poziom - 1)
+#         t.left(60)
+#         rysuj_krzywa_kocha(t, dlugosc, poziom - 1)
+#         t.right(120)
+#         rysuj_krzywa_kocha(t, dlugosc, poziom - 1)
+#         t.left(60)
+#         rysuj_krzywa_kocha(t, dlugosc, poziom - 1)
+# def rysuj_platek_kocha(poziom):
+#     ekran = turtle.Screen()
+#     ekran.setup(500, 500)
+#     ekran.title("Płatek Kocha")
+#     t = turtle.Turtle()
+#     t.speed(0)
+#     t.hideturtle()
+#     t.penup()
+#     t.goto(-150, 100)
+#     t.pendown()
+#     for _ in range(3):
+#         rysuj_krzywa_kocha(t, 300, poziom)
+#         t.right(120)
+#     ekran.mainloop()
+# rysuj_platek_kocha(poziom=4)
+
+# # Dywan Sierpińskiego
+# import tkinter as tk
+# def rysuj_dywan(x, y, rozmiar, stopien):
+#     if stopien == 0:
+#         canvas.create_rectangle(x, y, x + rozmiar, y + rozmiar, fill="black")
+#     else:
+#         nowy_rozmiar = rozmiar / 3
+#         for i in range(3):
+#             for j in range(3):
+#                 if i != 1 or j != 1:
+#                     rysuj_dywan(x + i * nowy_rozmiar, y + j * nowy_rozmiar, nowy_rozmiar, stopien - 1)
+# root = tk.Tk()
+# root.title("Dywan Sierpińskiego")
+# canvas = tk.Canvas(root, width=540, height=540)
+# canvas.pack()
+# rozmiar = 500
+# stopien = 4
+# rysuj_dywan(20, 20, rozmiar, stopien)
+# root.mainloop()
+
+# # Zbiór Cantora
+# import tkinter as tk
+# def rysuj_cantora(x, y, dlugosc, stopien):
+#     if stopien == 0:
+#         canvas.create_line(x, y, x+dlugosc, y, width=2)
+#     else:
+#         rysuj_cantora(x, y, dlugosc/3, stopien-1)
+#         rysuj_cantora(x+2*dlugosc/3, y, dlugosc/3, stopien-1)
+# root = tk.Tk()
+# root.title("Zbiór Cantora")
+# canvas = tk.Canvas(root, width=600, height=600)
+# canvas.pack()
+# rysuj_cantora(50, 50, 500, 0)
+# rysuj_cantora(50, 150, 500, 1)
+# rysuj_cantora(50, 250, 500, 2)
+# rysuj_cantora(50, 350, 500, 3)
+# # rysuj_cantora(50, 450, 500, 4)
+# # rysuj_cantora(50, 550, 500, 5)
+
+# root.mainloop()
