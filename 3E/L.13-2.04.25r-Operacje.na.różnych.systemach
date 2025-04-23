@@ -29,6 +29,41 @@
 #     wynik = "1" + wynik
 # print(wynik)
 
+# # Zad.3 (not mine)
+def to_decimal(number_str, base):
+    """Konwertuje liczbę z systemu o podstawie 'base' do systemu dziesiętnego."""
+    return int(number_str, base)
+
+def from_decimal(number, base):
+    """Konwertuje liczbę z systemu dziesiętnego do systemu o podstawie 'base'."""
+    if number == 0:
+        return "0"
+    result = ""
+    while number > 0:
+        result = str(number % base) + result
+        number = number // base
+    return result
+
+# Wczytywanie danych od użytkownika
+p = int(input("Podaj podstawę systemu (od 2 do 9): "))
+if p < 2 or p > 9:
+    print("Podstawa musi być w zakresie od 2 do 9.")
+else:
+    num1 = input(f"Podaj pierwszą liczbę w systemie o podstawie {p}: ")
+    num2 = input(f"Podaj drugą liczbę w systemie o podstawie {p}: ")
+
+    # Konwertowanie liczb do systemu dziesiętnego
+    num1_decimal = to_decimal(num1, p)
+    num2_decimal = to_decimal(num2, p)
+
+    # Obliczanie sumy
+    sum_decimal = num1_decimal + num2_decimal
+
+    # Konwertowanie wyniku z powrotem na system o podstawie p
+    sum_p_base = from_decimal(sum_decimal, p)
+
+    print(f"Suma liczb {num1} i {num2} w systemie o podstawie {p} wynosi: {sum_p_base}")
+
 # # Zad.5
 # 121 = 10201₃
 # 101112₃ + 121₉ = 112020₃ #dodawanie w słupku
