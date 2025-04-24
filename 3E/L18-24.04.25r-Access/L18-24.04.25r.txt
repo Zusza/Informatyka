@@ -1,0 +1,18 @@
+Zad.12.1
+SELECT *
+FROM klienci
+ORDER BY klienci.nazwisko
+
+Zad.12.2
+SELECT DISTINCT samochody.marka, samochody.model
+FROM samochody
+WHERE samochody.rocznik >= 2010
+AND samochody.rocznik <= 2020
+AND samochody.moc > 100
+ORDER BY samochody.marka, samochody.model
+
+Zad.12.3
+SELECT klienci.id, klienci.imie, klienci.nazwisko, COUNT(samochody.id)
+FROM klienci
+LEFT JOIN samochody ON klienci.Id = samochody.wlasciciel
+ORDER BY 4 DESC
