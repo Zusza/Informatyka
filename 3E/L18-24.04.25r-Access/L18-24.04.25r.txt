@@ -16,3 +16,10 @@ SELECT klienci.id, klienci.imie, klienci.nazwisko, COUNT(samochody.id)
 FROM klienci
 LEFT JOIN samochody ON klienci.Id = samochody.wlasciciel
 ORDER BY 4 DESC
+
+Zad.13.3
+SELECT Pracownicy.Imie, Pracownicy.Nazwisko, Rejestr_aktywnosci.Data, Count(Rejestr_aktywnosci.ID_aktywnosci) AS PoliczOfID_aktywnosci
+FROM Pracownicy INNER JOIN Rejestr_aktywnosci ON Pracownicy.PESEL = Rejestr_aktywnosci.PESEL
+GROUP BY Pracownicy.Imie, Pracownicy.Nazwisko, Rejestr_aktywnosci.Data
+HAVING (((Count(Rejestr_aktywnosci.ID_aktywnosci))>1))
+ORDER BY Pracownicy.Nazwisko, Count(Rejestr_aktywnosci.ID_aktywnosci) DESC;
