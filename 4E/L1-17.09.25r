@@ -1,0 +1,16 @@
+Zadanie 5.
+Napisz program realizujący zamianę liczb z systemu rzymskiego na dziesiętny. Uwzględnij możliwość
+użycia symboli M, D, C, L, X, V, I.
+Wskazówki:
+Gdy następny symbol ma większą wartość, to wartość aktualnego symbolu jest odejmowana.
+
+# liczby = input("Podaj liczbę do zamiany: ")
+# wartosci = {"I": 1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+# suma = 0
+
+n = int(input("Podaj liczbę: "))
+nominaly = [200,100,50,20,10,5,2,1]
+k = 0
+ile = []
+for i in range(n):
+    ile = k % nominaly;
