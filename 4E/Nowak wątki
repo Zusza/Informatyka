@@ -1,0 +1,75 @@
+import java.util.Random;
+
+public class Main {
+    // Zmienne współdzielone między wątkami
+    static int a, b;
+    static int nwd, nww;
+
+    public static void main(String[] args) throws InterruptedException {
+        Random rand = new Random();
+        a = rand.nextInt(50) + 1;
+        b = rand.nextInt(50) + 1;
+
+        System.out.println("Wylosowane liczby: " + a + " i " + b);
+
+        // Tworzymy trzy wątki
+        Thread gcdThread = new Thread(new NwdThread());
+        Thread lcmThread = new Thread(new NwwThread());
+        Thread displayThread = new Thread(new DisplayThread());
+
+        // Uruchamiamy dwa pierwsze wątki
+        gcdThread.start();
+        lcmThread.start();
+
+        // Czekamy aż skończą
+        gcdThread.join();
+        lcmThread.join();
+
+        // Uruchamiamy trzeci wątek do wyświetlenia wyników
+        displayThread.start();
+    }
+
+    // Wątek 1: liczy NWD
+    static class NwdThread implements Runnable {
+        private int nwd(int x, int y) {
+            while (y != 0) {
+                int temp = y;
+                y = x % y;
+                x = temp;
+            }
+            return x;
+        }
+
+        @Override
+        public void run() {
+            nwd = nwd(a, b);
+            System.out.println("Obliczono NWD: " + nwd);
+        }
+    }
+
+    // Wątek 2: liczy NWW
+    static class NwwThread implements Runnable {
+        @Override
+        public void run() {
+            try {
+                // lekkie opóźnienie, by mieć pewność że NWD już policzono
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            nww = a * b / nwd;
+            System.out.println("Obliczono NWW: " + nww);
+        }
+    }
+
+    // Wątek 3: wyświetla wyniki
+    static class DisplayThread implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("===== WYNIKI =====");
+            System.out.println("Liczby: " + a + " i " + b);
+            System.out.println("NWD = " + nwd);
+            System.out.println("NWW = " + nww);
+        }
+    }
+}
