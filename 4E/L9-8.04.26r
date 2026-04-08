@@ -1,0 +1,19 @@
+plik = open("dane4.txt", "r")
+x = list(map(int, plik.read()))
+plik.close()
+print(x)
+n = len(x)
+n = 6
+maximum = 0
+maximum_index = -1
+for i in range(n):
+    ile = 0
+    for j in range(i):
+        if x[i] > x[j]:
+            ile += 1
+            print(i, j, x[i], x[j])
+        print(ile)
+        if ile > maximum:
+            maximum = ile
+            maximum_index = i
+print(maximum_index+1)
